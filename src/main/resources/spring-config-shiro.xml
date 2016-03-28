@@ -99,7 +99,7 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <!-- 登录地址配置 -->
-        <property name="loginUrl" value="http://localhost:8080/shiro-oauth2-server/authorize?client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee&amp;response_type=code&amp;redirect_uri=http://localhost:8080/shiro-oauth2-client/oauth2-login"/>
+        <property name="loginUrl" value="http://localhost:8080/shiro-oauth2-server/authorize?client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee&amp;client_key=d8346ea2-6017-43ed-ad68-19c0f971738b&amp;response_type=code&amp;redirect_uri=http://localhost:8080/shiro-oauth2-client/re"/>
         <!-- 登录成功后跳转地址 -->
         <property name="successUrl" value="/"/>
         <!-- 表单认证容器 -->
@@ -114,6 +114,7 @@
                 / = anon
                 /oauth2Failure.jsp = anon
                 /oauth2-login = oauth2Authc
+                /re = oauth2Authc
                 /logout = logout
                 /** = user
             </value>
